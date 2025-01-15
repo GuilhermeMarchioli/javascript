@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4!</title>
+    <style>
+        * {
+            font-family: sans-serif;            
+        }
+
+        body {
+            background-color: lightyellow;
+        }
+
+        h1 {
+            display: block;
+            margin: auto;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;    
+            border: 1px black solid;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var nome = window.prompt('Qual é o seu nome?')
+        
+        document.write(`<h1>Olá <span>${nome}</span>!`)
+        document.write(`<h1>Seu nome tem ${nome.length} caracteresPretin!</h1>`)
+        document.write(`<h1>Seu nome em maiusculas é: ${nome.toUpperCase()}</h1>`)
+        document.write(`<h1>Seu nome em minusculas é: ${nome.toLowerCase()}</h1>`)
+    </script>
+</body>
+</html>
