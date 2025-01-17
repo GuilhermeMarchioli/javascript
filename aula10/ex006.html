@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de DOM</title>
+</head>
+<style>
+    body, html {
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        background-color: #ffb4b4;
+        font-family: Arial, Helvetica, sans-serif;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div {
+        background-color: rgb(160, 34, 34);
+        padding: 20px;
+        color: white;
+        border-radius: 50px;
+        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.575);
+        min-width: 200px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div id="area">
+        <h1 >Interaja Comigo</h1>
+    </div>
+    <script>
+        var area = document.getElementById('area')
+        area.addEventListener ('click', clicou)
+        area.addEventListener ('mouseenter', mouseEntrou)
+        area.addEventListener ('mouseout', mouseSaiu)
+
+        function clicou() {
+            area.style.color = "black"
+            area.style.backgroundColor = "white"
+            area.style.transitionDuration = "0.5s"
+             area.querySelector("h1").innerText = "Você Clicou!"
+        }
+
+        function mouseEntrou() {
+            area.style.backgroundColor = "lightblue"
+            area.style.color = "blue"
+            area.querySelector("h1").innerText = "Você Entrou!"
+            area.style.transitionDuration = "0.5s"
+        }
+
+        function mouseSaiu() {
+            area.style.backgroundColor = "lightgreen"
+            area.style.color = "green"
+            area.querySelector("h1").innerText = "Você Saiu!"
+            area.style.transitionDuration = "0.5s"
+        }
+    </script>
+</body>
+</html>
