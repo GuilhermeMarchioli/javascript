@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Nascionalidade</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        height: 100%;
+        width: 100%;
+        background-color: lightgoldenrodyellow;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        text-align: center;
+        background-color: lightgreen;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    input#button {
+        width: 100%;
+        background-color: yellow;
+        color: darkgreen;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    input#button:hover {
+        background-color: rgb(255, 255, 131);
+        cursor: pointer;
+    }
+</style>
+<body>
+    <main>
+        <h1>Sistema de Nascionalidade</h1>
+        <p>
+            De qual país você veio? <input type="text" name="txtnas" id="txtnas">
+        </p>
+        <p>
+            <input type="button" value="Enviar" onclick="verificar()" id="button">
+        </p>
+        <div id="res">
+
+        </div> 
+    </main>
+    <script>
+        function verificar() {
+            var txtnas = window.document.getElementById('txtnas')
+            var nas = String(txtnas.value)
+            var res = window.document.getElementById('res')
+
+            if (nas == 'Brasil') {
+                res.innerHTML = '<p>Legal! Então você é <strong>Brasileiro!</strong> o preço do produto é de R$2,50</p>'
+            } else {
+                res.innerHTML = ('<p>Hmmm, então você é <strong>gringo</strong>... O preço do produto é de R$250,00</p>')
+            }
+
+        }
+    </script>
+</body>
+</html>
