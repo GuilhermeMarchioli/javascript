@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia da Semana</title>
+    <style>
+        body, html {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+ 
+        main {
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 3px 4px 11px rgba(0, 0, 0, 0.37);
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1 id="h1">Sistema Dia da Semana</h1>
+        <h2 id="h2"></h2>
+        <p id="par"></p>
+        
+    </main>
+    <script>
+        var hoje = new Date()
+        var hora = hoje.getHours()
+        var minuto = hoje.getMinutes()
+        var segundo = hoje.getSeconds()
+        var bomDTN = document.getElementById('h2')
+        var diaSem = hoje.getDay()
+        var par = document.getElementById('par')
+        var main = document.getElementById('main')
+        var h1 = document.getElementById('h1')
+
+        par.innerText = `Hoje é ${diaSem}`
+
+        // Dias da semana:
+
+        switch (diaSem) {
+            case 0:
+                par.innerText = `são exatamente ${hora} horas, alias hoje é Domingo!`
+            break
+            case 1:
+                par.innerText = `são exatamente ${hora} horas, alias hoje é Segunda!`
+            break
+            case 2:
+                par.innerText = `são exatamente ${hora} horas ${minuto} minutos e ${segundo} segundos, alias hoje é Terça!`
+            break
+            case 3:
+                par.innerText = `são exatamente ${hora} horas, alias hoje é Quarta!`
+            break
+            case 4:
+                par.innerText = `são exatamente ${hora} horas, alias hoje é Quinta!`
+            break
+            case 5:
+                par.innerText = `são exatamente ${hora} horas, alias hoje é Sexta!`
+            break
+            case 6:
+                par.innerText = `são exatamente ${hora} horas, alias hoje é Sábado!`
+            break
+            default:
+            par.innerText = '[ERRO] DIA NÃO IDENTIFICADO'
+                break
+        }
+
+        // Horas e saudação
+
+        if (hora < 12) {
+                bomDTN.innerText = 'Bom Dia!'
+            } else if (hora < 19) {
+                bomDTN.innerText = 'Boa Tarde!'
+            } else {
+                bomDTN.innerText = 'Boa Noite!'
+            }     
+
+        // Estilos variados
+
+        if (hora < 12) {
+            document.body.style.backgroundColor = "lightblue"
+            main.style.backgroundColor = "white"
+            h1.style.color = "darkgoldenrod"
+            h2.style.color = "lightblue"
+            h2.style.textShadow = "1px 1px 1px black"
+            par.style.color = "slateblue"
+        }
+    </script>
+</body>
+</html>
