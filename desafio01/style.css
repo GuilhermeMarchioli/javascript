@@ -33,8 +33,34 @@ section {
     box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.452);
 }
 
+section > p {
+    text-align: center;
+    font-weight: bold;
+}
+
 footer {
     padding: 30px;
     font-style: italic;
     text-align: center;
+}
+
+div#tempo {
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+div#foto{
+   margin: auto; 
+   background-image: ;
+    background-position: center;
+    background-repeat: no-repeat;
+   background-size: cover;
+   height: 200px;
+   width: 200px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   border-radius: 100px;
+   box-shadow: 3px 2px 6px;
 }
