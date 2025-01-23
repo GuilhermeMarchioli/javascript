@@ -1,7 +1,6 @@
 var x = 1
 
-
-while (x <= 7) {
+do {
     console.log(`Delicia! comi ${x} fatia(s) de Pizza!`)
     x++
-}0
+} while (x <= 5) 
