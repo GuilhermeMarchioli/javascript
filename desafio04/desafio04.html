@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de idade</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Verificador de idade</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
+            <p>
+                <label for="txtnum">Número:</label>
+                <input type="number" name="txtnum" id="txtnum">
+                <input type="button" value="Gerar tabuada" onclick="tabuada()" id="button">
+            </p>
         </div>
-        <div>
+        <div id="res">
+            <select name="tabuada" id="seltab" size="10"> <option>digite um número na caixa acima</option></select>
         </div>
     </section>
     <footer>

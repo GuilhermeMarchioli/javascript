@@ -10,7 +10,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #adeeeb;
+    background-color: lightgreen;
 }
 
 header {
@@ -33,6 +33,31 @@ section {
     box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.452);
 }
 
+div  > p {
+    margin: 20px;
+}
+
+input#button {
+    padding: 5px 10px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+}
+
+input#button:hover {
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+div#res {
+    text-align: center;
+}
+
+div#res > section {
+    border-radius: 20px;
+    padding: 10px;
+}
 
 footer {
     padding: 30px;
