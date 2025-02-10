@@ -5,7 +5,11 @@ function adicionarTarefa() {
     let inputTarefa = document.getElementById('inputTarefa')
     let lista = document.getElementById('lista')
     
-    if(inputTarefa.value.length < 3) {
+let tarefa = inputTarefa.value.trim();
+
+    if(tarefa < 3 ) {
+        msg.style.color = "darkRed"
+        msg.innerText = "O item não foi adicionado a lista"
         window.alert('É necessário pelo menos 3 caracteres para ser adicionado a lista.')
     } else {
         let li = document.createElement('li')
