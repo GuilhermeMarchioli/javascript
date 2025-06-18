@@ -1,0 +1,6 @@
+// Você é um treinador Pokémon. Seus Pokémons ganharam um bônus de XP, e você precisa atualizar a lista de XP deles dobrando os valores!
+const pokemonsXP = [120, 300, 80, 450, 200];
+
+const dobraXP = pokemonsXP.map((xp) => xp * 2)
+
+console.log(dobraXP)
