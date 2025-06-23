@@ -9,4 +9,8 @@ const inventario = [
 ];
 
 const soma = inventario.reduce((total, item) => total += item.quantidade, 0)
-const map = soma.map((user) => )
+
+const map = inventario.map((item) => `${item.nome}: ${item.quantidade} `)
+
+console.log(map)
+console.log(`TOTAl: ${soma}`)
