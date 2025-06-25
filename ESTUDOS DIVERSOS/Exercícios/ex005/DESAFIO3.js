@@ -23,7 +23,7 @@ const jogadores = [
     nome: 'Thorne',
     classe: 'Guerreiro',
     itens: [
-      { nome: 'Espada', preco: 150, quantidade: 1 },
+      { nome: 'Espada', preco: 140, quantidade: 1 },
       { nome: 'Poção', preco: 10, quantidade: 2 },
     ],
   },
@@ -38,6 +38,20 @@ const jogadores = [
 ];
 
 // somando o valor dos items
-const multiplica = jogadores.map((player) => itens.preco )
+const multiplica = jogadores.map((player) => player.itens.map((item) => item.quantidade * item.preco))
+const valorTotal = multiplica.map((lista) => lista.reduce((total, valor) => total += valor))
 
-console.log(multiplica)
+// filtrando e os ordenando
+const filtrar = valorTotal.filter((pontos) => pontos > 150)
+const ordenar = filtrar.sort((a, b) => b - a)
+
+//criando novo array
+const newArr = jogadores.map((player, i) => {
+  return {
+    nome: player.nome,
+    classe: player.classe,
+    TotalValor: valorTotal[i]
+  }
+}) 
+
+console.log(newArr)
