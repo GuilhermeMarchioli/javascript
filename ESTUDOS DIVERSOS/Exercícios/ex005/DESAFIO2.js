@@ -15,6 +15,7 @@ const jogadores = [
 const ativos = jogadores.filter((user) => user.ativo == true)
 const pontosTotais = ativos.reduce((total, user) => total += user.pontos, 0)
 const media = pontosTotais / ativos.length
+
 const acimaDaMedia = ativos.filter((user) => user.pontos > media)
 const verificaPontos = acimaDaMedia.every((user) => user.pontos > 1000)
 
