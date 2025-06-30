@@ -1,50 +1,65 @@
-//Você tem uma lista de alunos da Academia de Aventureiros. Cada aluno tem:
+//Você tem um array com heróis e vilões monitorados pela Liga da Justiça. Cada personagem tem:
 //nome
-//disciplina (espada, magia, furtividade...)
-//provas: array com objetos { nota, dificuldade }
-const alunos = [
+// afiliação: 'herói' ou 'vilão'
+// nivelDeAmeaça: de 1 a 10
+// batalhas: array de objetos { adversario, resultado, danoCausado }
+
+const personagens = [
   {
-    nome: 'Alaric',
-    disciplina: 'espada',
-    provas: [
-      { nota: 8, dificuldade: 'alta' },
-      { nota: 6, dificuldade: 'média' },
-      { nota: 7, dificuldade: 'baixa' },
+    nome: 'Wally West',
+    afiliação: 'herói',
+    nivelDeAmeaça: 4,
+    batalhas: [
+      { adversario: 'Gorila Grodd', resultado: 'vitória', danoCausado: 100 },
+      { adversario: 'Capitão Frio', resultado: 'vitória', danoCausado: 120 },
     ],
   },
   {
-    nome: 'Lyra',
-    disciplina: 'magia',
-    provas: [
-      { nota: 9, dificuldade: 'alta' },
-      { nota: 10, dificuldade: 'alta' },
-      { nota: 8, dificuldade: 'média' },
+    nome: 'Capuz Vermelho',
+    afiliação: 'herói',
+    nivelDeAmeaça: 6,
+    batalhas: [
+      { adversario: 'Máscara Negra', resultado: 'vitória', danoCausado: 130 },
+      { adversario: 'Coringa', resultado: 'derrota', danoCausado: 80 },
     ],
   },
   {
-    nome: 'Kael',
-    disciplina: 'furtividade',
-    provas: [
-      { nota: 6, dificuldade: 'baixa' },
-      { nota: 7, dificuldade: 'média' },
-      { nota: 5, dificuldade: 'média' },
+    nome: 'Exterminador',
+    afiliação: 'vilão',
+    nivelDeAmeaça: 8,
+    batalhas: [
+      { adversario: 'Asa Noturna', resultado: 'vitória', danoCausado: 150 },
+      { adversario: 'Arqueiro Verde', resultado: 'empate', danoCausado: 100 },
+    ],
+  },
+  {
+    nome: 'Coringa',
+    afiliação: 'vilão',
+    nivelDeAmeaça: 9,
+    batalhas: [
+      { adversario: 'Batman', resultado: 'derrota', danoCausado: 60 },
+      { adversario: 'Capuz Vermelho', resultado: 'vitória', danoCausado: 90 },
     ],
   },
 ];
 
+//Filtre apenas os vilões com nível de ameaça acima de 6 (ameaças sérias!)
+const filtrarViloes = personagens.filter((vilao) => vilao.afiliação === "vilão" && vilao.nivelDeAmeaça > 6  ) 
 
-//Calcule a média ponderada de cada aluno.
+//Calcule o total de dano causado por cada personagem (usando reduce nos objetos de batalha)
+const danoTotal = filtrarViloes.map((lista) => lista.batalhas.reduce((total, vilao) => total += vilao.danoCausado, 0))
 
-//A nota final deve ser a média das notas, considerando o peso:
+//Crie um novo array com { nome, afiliação, nivelDeAmeaça, totalDano }
+const newArr = filtrarViloes.map((vilao, i) => {
+  return {
+    nome: vilao.nome,
+    afiliação: vilao.afiliação,
+    nivelDeAmeaça: vilao.nivelDeAmeaça,
+    totalDano: danoTotal[i]
+  }
+})
 
-//dificuldade alta = peso 3
+//Ordene esse novo array do que mais causou dano para o que menos causou
+const ordenar = newArr.sort((a, b) => b.totalDano - a.totalDano)
 
-//dificuldade média = peso 2
-
-//dificuldade baixa = peso 1
-
-//Crie um novo array com objetos: { nome, disciplina, notaFinal }
-
-//Filtre apenas alunos com notaFinal acima de 7.5
-
-//Ordene do melhor para o pior
+console.log(ordenar)
