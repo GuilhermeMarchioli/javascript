@@ -21,7 +21,7 @@ const newArr = herois.map((heroi, i) => {
 })
 
 // Filtrar os heróis com taxa acima de 50%.
-const filtrar = newArr.filter((heroi) => heroi.taxaSucesso > 0.50)
+const filtrar = newArr.filter((heroi) => heroi.taxaSucesso > 0.50 )
 
 // Ordenar do mais eficiente para o menos.
 const ordenar = filtrar.sort ((a, b) => b.taxaSucesso - a.taxaSucesso)
