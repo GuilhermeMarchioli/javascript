@@ -26,9 +26,9 @@ const grupos = [
 ];
 
 //Calcular o xp total de cada grupo
-const xp = grupos.map((guilda) => guilda.missoes.reduce((total, missao) => total += missao.xp))
+const xp = grupos.map((guilda) => guilda.missoes.reduce((total, missao) => total += missao.xp, 0))
 
-const dano = grupos.m((guilda) => guilda.danoSofrido.reduce((total, danos) => total += danos.danoSofrido))
+const dano = grupos.map((guilda) => guilda.missoes.reduce((total, danos) => total += danos.danoSofrido, 0))
 
 //Criar um array com { nome, xpTotal, mediaDano }
 const newArr = grupos.map((grupo, i) => {
@@ -40,12 +40,13 @@ const newArr = grupos.map((grupo, i) => {
 })
 
 //Filtrar apenas grupos com xpTotal acima de 400
-
+const filtro = newArr.filter((grupo) => grupo.xpTotal > 400)
 
 //Ordenar do mais eficiente para o menos, baseado em média de dano (quanto menos, melhor)
-
+const ordenar = filtro.sort((a, b) => a.mediaDano - b.mediaDano)
 
 //(Opcional) Mostrar apenas os grupos que concluíram todas as missões com sucesso
+const opicional = grupos.map((grupo) => grupo.missoes.filter((missao) => missao.sucesso === true))
 
 
-console.log(newArr)
+console.log(opicional)
